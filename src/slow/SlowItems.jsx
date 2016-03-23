@@ -11,16 +11,18 @@ export class SlowItems extends React.Component {
     this.state = {
       items: props.items
     };
+
+    this.onChangeItemColor = this.onChangeItemColor.bind(this);
   }
 
   render() {
     return (
       <div className="left">
         {this.state.items.map((item, index) => {
-          return <SlowItem 
+          return <SlowItem
             key={index}
             item={item}
-            onClick={this.onChangeItemColor.bind(this, index)} />
+            onClick={this.onChangeItemColor} />
         })}
       </div>
     );

@@ -11,6 +11,8 @@ export class FastItems extends React.Component {
     this.state = {
       items: props.items
     };
+
+    this.onChangeItemColor = this.onChangeItemColor.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -21,10 +23,11 @@ export class FastItems extends React.Component {
     return (
       <div className="right">
         {this.state.items.map((item, index) => {
-          return <FastItem 
+          return <FastItem
             key={index}
             item={item}
-            onClick={this.onChangeItemColor.bind(this, index)} />
+            onClick={this.onChangeItemColor}
+            />
         })}
       </div>
     );
